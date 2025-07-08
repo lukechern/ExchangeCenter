@@ -1,0 +1,622 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html, body {
+  height: 100vh; /* 使用视口高度单位，确保占满整个屏幕 */
+  margin: 0;
+  min-height: 100vh; /* 确保最小高度也是视口高度 */
+}
+
+body{
+  background:rgb(180, 180, 180);
+  display: flex; /* Enable flexbox for body */
+  flex-direction: column; /* Arrange children vertically */
+  min-height: 100vh; /* 确保body至少占满视口高度 */
+}
+
+  #saveSuccess_7ree {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2c6f2e;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  #saveSuccess_7ree.show {
+    opacity: 1;
+  }
+
+  /* 功能标题栏样式 */
+header {
+  max-width: 1200px;
+  padding: 1rem;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%; /* 确保header元素占据其父容器的全部宽度 */
+  flex-shrink: 0; /* 防止header被压缩 */
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 0.5rem;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+}
+
+nav ul li a:hover, ul li .now {
+  background-color: #eee;
+}
+
+
+/* 主要内容样式 */
+main {
+  max-width: 1200px;
+  padding: 0;
+  margin:0 auto;
+  background-color: #f5f5f5;
+  flex: 1;
+  flex-grow: 1; /* Allow main to grow and take available space */
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* 确保main元素占据其父容器的全部宽度 */
+  min-height: 0; /* 允许内容收缩 */
+}
+
+.textarea-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.textarea-container textarea {
+  flex: 1;
+  width: 100%;
+  resize: none;
+  padding-left: 1rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #c5c5c5;
+  background-color: #1E2324;
+  line-height: 30px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.076) 1px, transparent 1px);
+  background-size: 10px 30px;
+  background-repeat: repeat;
+  background-attachment: local;
+  background-position: 0 0;
+  overflow-y: auto;
+  margin-left:32px;
+}
+
+.status-bar_7ree {
+  display: flex;
+  justify-content: space-between;
+  width: 92%;
+  margin: 0 auto;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: #999;
+}
+
+.status-bar_7ree #successMsg{
+  margin-left: auto;
+}
+
+
+/*行号插件微调*/
+.textarea-wrap{
+  margin-top: 2px !important;
+  margin-left: 2px !important;
+}
+
+
+
+
+#successMsg{
+  text-align: right;
+  color: rgb(155, 155, 155);
+}
+
+/* Note页面的footer样式 */
+footer #successMsg {
+  text-align: left; /* 保存时间左对齐 */
+  margin-right: auto; /* 推送到左侧 */
+}
+
+/* 页脚样式 */
+footer {
+  max-width: 1200px;
+  height: 2.6rem;
+  background-color: #f5f5f5;
+  margin:0 auto;
+  width: 100%; /* 确保footer元素占据其父容器的全部宽度 */
+  display: flex; /* 启用Flexbox */
+  align-items: center; /* 垂直居中 */
+  justify-content: space-between; /* 水平两端对齐 */
+  padding: 0 2%; /* 添加左右内边距，防止内容紧贴边缘 */
+  margin-top: auto; /* 确保footer始终在底部 */
+  flex-shrink: 0; /* 防止footer被压缩 */
+}
+
+footer button{
+  /* display: block; */ /* 这个属性会导致按钮独占一行，移除 */
+  width: 120px; 
+  height: 2rem; /* 保持按钮高度 */
+  margin-left: auto;
+  background-color: #313068;
+  color: white;
+  border:none;
+  border-radius: 4px;
+}
+
+
+.filetable{
+  width:96%;
+  margin:0 auto;
+}
+
+.filetable th{
+  font-weight: 300;
+  height:30px;
+  line-height: 30px;
+  text-align: left;
+  background-color: rgb(233 237 249);
+  padding:10px;
+}
+
+.filetable td{
+  height:30px;
+  line-height: 30px;
+  text-align: left;
+  padding:10px;
+  color:#6d6d6d;
+}
+
+.filetable td p{
+  text-align: left;
+  font-size:12px;
+}
+
+.filetable td a{
+  display: inline-block;
+  font-size:20px;
+  color:#000000;
+  text-decoration: none;
+  width:200px;
+  height:30px;
+  overflow: hidden;
+}
+
+.filetable td a i{
+  font-size: 30px;
+}
+
+.filetable tr:hover td{
+  background-color: rgb(236, 241, 254);
+}
+
+.filetable td:first-child,
+.filetable th:first-child {
+  width: 30px;
+  text-align: center;
+}
+
+
+
+.filetable th .iconfont{
+  font-size:18px;
+  font-weight: 300;
+}
+
+.filetable td .iconfont{
+  font-size:30px;
+}
+
+.filetable td:first-child label{
+  cursor: pointer;
+}
+
+.filetable td:first-child label input{
+  display:none;
+}
+
+.filetable tr.selected td{
+  background-color: #ebfbeb;
+}
+
+
+.filetable tr.selected td:first-child label::before{
+  content: "\2714";
+  color: green;
+  font-weight: bold;
+  margin-right: 5px;
+  font-size:44px;
+}
+
+
+.filetable tr.selected td:first-child label i {
+  display: none;
+}
+
+
+
+.filetable td:nth-child(3),
+.filetable th:nth-child(3) {
+  text-align: center;
+}
+
+.iconfont{
+  margin-right:10px;
+}
+
+.upload_ok{
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c6f2e;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease-in-out;
+  animation: showToolbar 0.2s forwards ease-in-out;
+}
+
+.h-no1111{
+  color:rgb(0, 98, 2);
+}
+
+.h-no2222{
+  color:rgb(20, 1, 143);
+}
+
+.h-no3333{
+  color:rgb(151, 1, 66);
+}
+
+.admincp{
+  max-width: 1200px;
+  padding: 2rem;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  flex: 1;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 0; /* 允许内容收缩 */
+  justify-content: flex-start; /* 内容从顶部开始 */
+}
+
+.admincp p{
+  min-height:50px;
+  line-height: 50px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.admincp p span{
+  display: inline-block;
+  width:160px;
+}
+
+.admincp input[type="text"]{
+  height:40px;
+  line-height: 40px; 
+  width:360px;
+  padding: 0 15px;
+  background: #f2f1f9;
+  border:1px solid rgb(207, 207, 207);
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.admincp button {
+  height:38px;
+  line-height: 38px; 
+  padding:0 10px;
+  background-color: #cfcfcf;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+.admincp button:hover {
+  background-color: #b7b7b7 !important;
+}
+
+.notice{
+  color:rgb(141, 141, 141);
+  text-align: center;
+  letter-spacing: 2px;
+  padding:60px;
+
+}
+.notice i{
+  display: inline-block;
+  transform: rotate(15deg);
+}
+
+.notice em {
+  font-size: 24px;
+  font-style: italic;
+}
+
+
+.qrcode_popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+  border-radius:5px;
+}
+
+.qrcode_popup img {
+  width: 150px;
+  height: 150px;
+  z-index: 1;
+}
+
+
+.notification {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFFFFF;
+  padding: 10px;
+  background-color: #2c6f2e;
+  font-size: 18px;
+  transition: opacity 0.3s ease-out;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: -300px; /* 初始位置在屏幕顶部外面 */
+  transform: translate(-50%, 0);
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: drop-down 0.5s ease forwards;
+}
+
+@keyframes drop-down {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  60% {
+    top: 40%;
+  }
+  80% {
+    top: 30%;
+  }
+  100% {
+    top: 40%;
+    opacity: 1;
+  }
+}
+
+
+
+
+#popup h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#popup .tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#popup .tab-button {
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #dddddd;
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+}
+
+#popup .tab-button.active {
+  font-weight: 700;
+  background-color: #ffffff;
+}
+
+#popup .tab-content {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+#popup .tab-content.active {
+  display: flex;
+}
+
+#popup .tab-content input {
+  width: 100%;
+  height: 40px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+#popup .tab-content input:focus {
+  border-color: #555555;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#popup .tab-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #313068;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  margin-top:20px;
+}
+
+#popup .tab-content button:hover {
+  background-color: #555555;
+}
+
+#popup .tab-content button:active {
+  background-color: #777777;
+}
+
+.file_opbtn{
+  font-size:26px !important;
+  cursor: pointer;
+}
+
+
+.toolbar {
+  line-height: 26px;
+  padding: 20px;
+  text-align: center;
+  display: none;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: showToolbar 0.2s forwards ease-in-out;
+}
+
+@keyframes showToolbar {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.toolbar i{
+  font-style:normal;
+  color:#313068;
+}
+
+.toolbar b{
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.toolbar span{
+  font-size: 30px;
+  display: inline-block;
+  padding:5px;
+  cursor: pointer;
+  color: #313068;
+}
+
+.toolbar > span.iconfont.icon-package{
+  margin-left:25px;
+}
+
+#config-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 响应式设计 - 小屏幕适配 */
+@media (max-width: 768px) {
+  .admincp {
+    padding: 1rem;
+  }
+  
+  .admincp p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admincp p span {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admincp input[type="text"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .admincp button {
+    width: 100%;
+  }
+  
+  footer {
+    height: 3rem; /* 在小屏幕上增加footer高度 */
+  }
+  
+  /* 小屏幕上的footer布局调整 */
+  footer #successMsg {
+    font-size: 0.9rem; /* 稍微减小字体大小 */
+  }
+  
+
+}
+
+

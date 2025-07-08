@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件中转</title>
+    <link rel="stylesheet" href="template/css/styles.css">
+    <link rel="stylesheet" href="template/css/iconfont.css">
+    <script defer src="template/js/file_script.js"></script>
+  </head>
+  <body>
+    
+
+    <header>
+      <h1 class="h-no2222">文件中转</h1>
+      <nav>
+        <ul>
+          <li><a href="index.php">TXT</a></li>
+          <li><a href="file.php" class="now">FILE</a></li>
+          <li><a href="javascript:void(0);" id="dir">DIR</a></li>
+          <li><a href="admin.php">INI</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    <main>         
+
+            
+      <?php echo $files_talbe ?>
+           
+    </main>
+    <footer>
+      <button type="submit" id="uploadBtn"><i class="iconfont icon-upload"></i>上传文件</button>
+      <input type="file" id="fileInput" multiple style="display: none;">
+      <div id="progress"></div>
+    </footer>
+
+
+<script>
+ 
+</script>
+  
+
+  </body>
+</html>

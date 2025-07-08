@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4018009 */
+  src: url('iconfont.woff2?t=1681963653858') format('woff2'),
+       url('iconfont.woff?t=1681963653858') format('woff'),
+       url('iconfont.ttf?t=1681963653858') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-del:before {
+  content: "\e6ac";
+}
+
+.icon-package:before {
+  content: "\e681";
+}
+
+.icon-nofile:before {
+  content: "\e613";
+}
+
+.icon-queren:before {
+  content: "\e634";
+}
+
+.icon-xlsx:before {
+  content: "\e879";
+}
+
+.icon-upload:before {
+  content: "\e658";
+}
+
+.icon-baocun:before {
+  content: "\e60e";
+}
+
+.icon-copy:before {
+  content: "\e691";
+}
+
+.icon-guanli:before {
+  content: "\e993";
+}
+
+.icon-default:before {
+  content: "\e611";
+}
+
+.icon-doc:before {
+  content: "\e63c";
+}
+
+.icon-gif:before {
+  content: "\e63e";
+}
+
+.icon-htm:before {
+  content: "\e63f";
+}
+
+.icon-mp4:before {
+  content: "\e640";
+}
+
+.icon-pdf:before {
+  content: "\e641";
+}
+
+.icon-mp3:before {
+  content: "\e642";
+}
+
+.icon-png:before {
+  content: "\e643";
+}
+
+.icon-txt:before {
+  content: "\e644";
+}
+
+.icon-zip:before {
+  content: "\e645";
+}
+
+.icon-jpg:before {
+  content: "\e646";
+}
+

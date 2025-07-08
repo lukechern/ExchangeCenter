@@ -1,0 +1,70 @@
+<!--
+语言包定义
+
+    'hl_save_text_7r' => '保存文本',
+    'hl_save_success_7r' => '保存成功',
+-->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本中转</title>
+    <link rel="stylesheet" href="template/css/styles.css">
+    <link rel="stylesheet" href="template/css/iconfont.css">
+
+    <script src="template/js/jquery-3.4.1.min.js"></script>
+    <script src="template/js/auto-line-number.js"></script>
+
+    <script defer src="template/js/note_script.js"></script>
+    <script defer src="template/js/notification_script_7ree.js"></script>
+    
+  </head>
+  <body>
+    
+
+    <header>
+      <h1 class="h-no1111">文本中转</h1>
+      <nav>
+        <ul>
+          <li><a href="index.php" class="now">TXT</a></li>
+          <li><a href="file.php">FILE</a></li>
+          <li><a href="javascript:void(0);" id="qrcode">QRC</a></li>
+
+          <li><a href="admin.php">INI</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+
+    <main>
+      <div class="textarea-container">
+        <textarea id="textarea" name="textarea"><?php echo $text; ?></textarea>      
+      </div>
+      
+      <div class="status-bar_7ree">
+      </div>
+    </main>
+
+
+
+    <footer>
+      <div id="successMsg">上次保存：<?php echo $date; ?></div>
+      <button id="saveBtn_7ree"><i class="iconfont icon-copy"></i>保存文本</button>
+    </footer>
+    
+    <div id="qrcodepop" class="qrcode_popup"></div>
+
+
+    <script>
+	
+
+        $("#textarea").setTextareaCount({
+                                          bgColor: "#3B4140",
+                                          color: "#c5c5c5",
+                                          display: "block"
+                                        });
+  </script>
+  </body>
+</html>
+

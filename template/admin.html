@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参数设置</title>
+    <link rel="stylesheet" href="template/css/styles.css">
+    <link rel="stylesheet" href="template/css/iconfont.css">
+    <script defer src="template/js/admin_script.js"></script>
+  </head>
+  <body>
+    
+
+    <header>
+      <h1 class="h-no3333">参数设置</h1>
+      <nav>
+        <ul>
+          <li><a href="index.php">TXT</a></li>
+          <li><a href="file.php">FILE</a></li>
+          <li><a href="admin.php" class="now">INI</a></li>
+        </ul>
+      </nav>
+
+    </header>
+    
+    <form id="config-form" method="POST" action="ajax/config_edit_ajax.php">   
+
+    <main class="admincp">
+      
+            <p>
+              <span>根目录：</span>H:\localhost\wwwroot\7ree.tech\ExchangeCenter
+            </p>
+            
+            <p>
+              <span>文件交换目录：</span>
+              <input type="text" id="swapdir" name="swapdir" value="<?php echo $swapdir; ?>">
+            </p>
+          
+            <p>
+              <span>文本文件路径：</span>
+              <input type="text" id="notepath" name="notepath" value="<?php echo $notepath; ?>">
+            </p>
+            <p>
+              <span>访问url链接：</span>
+              <input type="text" id="url" name="url" value="<?php echo $url; ?>">
+            </p>
+            <p>
+              <span>post key：</span>
+              <input type="text" id="key" name="key" value="<?php echo $key; ?>">
+              <button onclick="generateKey(); return false;">随机生成</button>
+            </p>
+    </main>
+    <footer>
+        <button type="submit"><i class="iconfont icon-baocun"></i>保存设置</button>
+    </footer>
+    </form>    
+
+
+  </body>
+</html>
+
