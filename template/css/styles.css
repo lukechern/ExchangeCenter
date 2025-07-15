@@ -97,11 +97,12 @@ main {
   flex: 1;
   display: flex;
   overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .textarea-container textarea {
-  flex: 1;
-  width: 100%;
+  flex: none;
   resize: none;
   padding-left: 1rem;
   border: 1px solid #ccc;
@@ -116,6 +117,8 @@ main {
   background-position: 0 0;
   overflow-y: auto;
   margin-left:32px;
+  transition: width 0.2s ease;
+  box-sizing: border-box;
 }
 
 .status-bar_7ree {
@@ -137,6 +140,17 @@ main {
 .textarea-wrap{
   margin-top: 2px !important;
   margin-left: 2px !important;
+}
+
+/* 响应式textarea容器样式 */
+.textarea-group {
+  transition: width 0.2s ease;
+  position: relative;
+}
+
+/* 确保行号区域在窗口调整时保持正确位置 */
+.textarea-rows {
+  transition: height 0.2s ease;
 }
 
 
