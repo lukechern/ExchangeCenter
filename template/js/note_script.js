@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     // QR code display logic
     showQrCode.on('click', function() {
-        var text = textarea.val();
+        var text = window.location.href; // 只传递当前网址，不传递文本框内容
         if (text) {
             // 发送 AJAX 请求获取二维码图片
             const xhr = new XMLHttpRequest();

@@ -2,7 +2,7 @@
 require_once("../library/phpqrcode/phpqrcode.php");
 
 // 获取要生成二维码的 URL
-$url = $_GET['url'];
+$url = $_GET['text'];
 
 $outfile = false;
 $level = 'L';// 纠错级别：L、M、Q、H
